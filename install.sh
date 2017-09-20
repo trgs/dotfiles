@@ -46,14 +46,14 @@ ln -s $PWD/bashrc $HOME/.bashrc
 
 echo -n " vim"
 ln -s $PWD/vimrc $HOME/.vimrc
+mkdir $PWD/vim
 ln -s $PWD/vim $HOME/.vim
 
 echo "[+] Installing VundleVim"
 git clone https://github.com/VundleVim/Vundle.vim.git $HOME/.vim/bundle/Vundle.vim
 
-echo -n "[!] Press any key to start vim, use ':PluginInstall' and wait till all have been set up. Exit vim with ':q' to continue this install script..."
-read
-vim
+echo "[+] Downloading all Vim plugins"
+vim +PluginInstall +qall
 
 echo "[+] Compiling YouCompleteMe"
 $HOME/.vim/bundle/YouCompleteMe/install.py --all
