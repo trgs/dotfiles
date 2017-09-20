@@ -112,3 +112,5 @@ set expandtab       		" Expand TABs to spaces
 set number			" Shows linenumbers
 
 let g:airline_theme='luna' 	" https://github.com/vim-airline/vim-airline/wiki/Screenshots
+
+au BufRead,BufNewFile * start	" Always start vim in insert mode
