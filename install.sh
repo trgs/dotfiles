@@ -34,12 +34,17 @@ backup "$HOME/.vim" $BACKUP
 backup "$HOME/.vimrc" $BACKUP
 
 echo -n "[+] Creating symlinks:"
-
 echo -n " bash"
 ln -s $PWD/.bashrc $HOME/.bashrc
 
 echo -n " vim"
 ln -s $PWD/.vimrc $HOME/.vimrc
-ln -s $PWD/.vim/ $HOME/.vim/
+ln -s $PWD/.vim $HOME/.vim
+
+echo "[+] Installing VundleVim"
+git clone https://github.com/VundleVim/Vundle.vim.git $HOME/.vim/bundle/Vundle.vim
+
+echo "[+] Compiling YouCompleteMe"
+$HOME/.vim/bundle/YouCompleteMe/install.py --all
 
 echo " done!"
